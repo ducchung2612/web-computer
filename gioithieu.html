@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giới thiệu - Thế giới máy tính</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+        
+    <!-- our files -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/topnav.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/taikhoan.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/gioithieu.css">
+
+    <!-- js -->
+    <script src="data/products.js"></script>
+	<script src="js/dungchung.js"></script>
+    <script>
+        window.onload = function () {
+            khoiTao();
+            // thêm tags (từ khóa) vào khung tìm kiếm
+            var tags = ["Lenovo", "Asus", "Acer", "Mac", "Dell"];
+            for (var t of tags) addTags(t, "index.html?search=" + t);
+        }
+    </script>
+
+</head>
+
+<body>
+    <script> addTopNav();</script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <br class="page-gt">
+            <h4 class="page-header">
+                Giới thiệu
+            </h4>
+            <br class="page-info">
+                <br>Được thành lập từ năm 1996, Thế Giới Máy Tính tự hào là một trong những đơn vị tiên phong trong lĩnh vực phân phối và cung cấp các sản phẩm máy tính, laptop tại Việt Nam. Với hơn 25 năm kinh nghiệm, chúng tôi đã và đang không ngừng phát triển để mang đến cho khách hàng những sản phẩm công nghệ chất lượng nhất.</br>
+
+Từ năm 2000, Thế Giới Máy Tính vinh dự trở thành đối tác ủy quyền chính thức của nhiều thương hiệu máy tính hàng đầu như Dell, HP, Lenovo, Asus, và Apple - một dấu mốc quan trọng khẳng định uy tín và vị thế của chúng tôi trong ngành công nghệ.</br>
+
+Với đội ngũ chuyên viên kỹ thuật và tư vấn viên chuyên nghiệp, tận tâm, Thế Giới Máy Tính không chỉ đơn thuần là nơi bán máy tính, mà còn là người bạn đồng hành đáng tin cậy, giúp khách hàng lựa chọn được chiếc máy tính phù hợp nhất với nhu cầu công việc và học tập.</br>
+               <ul>Chúng tôi cam kết:
+                <li>100% sản phẩm chính hãng, mới nguyên seal</li>
+                <li>Giá cả cạnh tranh, minh bạch</li>
+                <li>Bảo hành chính hãng – Hậu mãi chu đáo</li>
+                <li>Tư vấn chuyên sâu – Giao hàng nhanh chóng</li>
+                <li>Hỗ trợ kỹ thuật trọn đời</li>
+               </ul>
+
+Trong thời đại công nghệ 4.0, Thế Giới Máy Tính không ngừng đổi mới để đem lại trải nghiệm mua sắm hiện đại và thuận tiện nhất. Chúng tôi cung cấp đầy đủ các dòng máy tính, từ laptop văn phòng giá rẻ đến các dòng máy tính chuyên đồ họa, gaming cao cấp.</br>
+
+Sự hài lòng và tin tưởng của khách hàng chính là động lực để Thế Giới Máy Tính tiếp tục phát triển và hoàn thiện. Chúng tôi xin chân thành cảm ơn sự đồng hành của quý khách trong suốt thời gian qua và mong muốn tiếp tục được phục vụ quý khách trên hành trình công nghệ sắp tới.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script> addContainTaiKhoan(); </script>
+
+    <div class="footer">
+        <script>addFooter();</script>
+        
+    </div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+</body>
+
+</html>

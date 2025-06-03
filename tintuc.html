@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức - Thế giới máy tính</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <!-- our files -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/topnav.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/taikhoan.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/tintuc.css">
+
+    <!-- js -->
+    <script src="data/products.js"></script>
+	<script src="js/dungchung.js"></script>
+    <script>
+        window.onload = function () {
+            khoiTao();
+            // thêm tags (từ khóa) vào khung tìm kiếm
+            var tags = ["Lenovo", "Asus", "Acer", "Mac", "Dell"];
+            for (var t of tags) addTags(t, "index.html?search=" + t);
+        }
+    </script>
+
+</head>
+
+<body>
+    <script> addTopNav();</script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <div class="body-tintuc">
+            <div class="tintuc-info">
+                <a href="https://vnexpress.net/so-hoa/laptop-gaming-ngay-cang-mong-nhe-4598750.html" target="_blank">
+                    <img src="img/tintuc/tintuc1.png">
+                    <h2>Laptop gaming ngày càng mỏng nhẹ nhưng vẫn mạnh mẽ</h2>
+                </a>
+                <br/>
+                <h5>VnExpress &emsp;3 giờ</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://thanhnien.vn/cong-nghe/danh-gia-chi-tiet-macbook-air-m3-2024.html" target="_blank">
+                    <img src="img/tintuc/tintuc2.png">
+                    <h2>Đánh giá chi tiết MacBook Air M3 2024: Hiệu năng vượt trội</h2>
+                </a>
+                <br/>
+                <h5>Thanh niên &emsp; 6 giờ</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://www.thegioididong.com/tin-tuc/so-sanh-card-do-hoa-nvidia-rtx-4070-vs-4070-ti" target="_blank">
+                    <img src="img/tintuc/tintuc3.png">
+                    <h2>So sánh chi tiết card đồ họa NVIDIA RTX 4070 và RTX 4070 Ti</h2>
+                </a>
+                <br/>
+                <h5>Thế Giới Di Động &emsp; 8 giờ</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://tinhte.vn/thread/danh-gia-dell-xps-13-2024-laptop-cao-cap-cho-nguoi-dung-pho-thong.3742815/" target="_blank">
+                    <img src="img/tintuc/tintuc4.png">
+                    <h2>Đánh giá Dell XPS 13 2024: Laptop cao cấp cho người dùng phổ thông</h2>
+                </a>
+                <br/>
+                <h5>Tinhte &emsp; 12 giờ</h5>
+            </div>
+            <div class="tintuc-info" style="border-bottom: 0;">
+                <a href="https://www.techz.vn/huong-dan-chon-mua-laptop-nam-2024" target="_blank">
+                    <img src="img/tintuc/tintuc5.png">
+                    <h2>Hướng dẫn chọn mua laptop phù hợp nhất năm 2024</h2>
+                </a>
+                <br/>
+                <h5>Techz &emsp; 1 ngày</h5>
+            </div> 
+
+        </div>
+
+    </section>
+
+    <script> addContainTaiKhoan(); </script>
+
+    <div class="footer">
+        <script>addFooter();</script>
+        
+    </div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+
+</body>
+
+</html>

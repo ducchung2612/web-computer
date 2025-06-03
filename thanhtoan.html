@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <title>Thanh Toán - Thế giới máy tính</title>
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <!-- our files -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/topnav.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/taikhoan.css">
+    <link rel="stylesheet" href="css/gioHang.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <style>
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .delivery-info {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .order-summary {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border: 1px solid #eee;
+            padding: 5px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product-price {
+            color: #e60000;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .total-price {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            color: #e60000;
+            padding-top: 15px;
+            border-top: 2px solid #eee;
+        }
+
+        .submit-button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background: #45a049;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        .quantity-text {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .unit-price {
+            color: #666;
+            margin: 5px 0;
+        }
+    </style>
+
+    <!-- js -->
+    <script src="data/products.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/dungchung.js"></script>
+    <script src="js/giohang.js"></script>
+
+</head>
+
+<body>
+    <script> addTopNav(); </script>
+
+    <section>
+        <script> addHeader(); </script>
+
+        <div class="container">
+            <div class="delivery-info">
+                <h2>Thông tin giao hàng</h2>
+                <form id="checkoutForm" onsubmit="return handleCheckout(event)">
+                    <div class="form-group">
+                        <label for="fullName">Họ và tên:</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ giao hàng:</label>
+                        <input type="text" id="address" required placeholder="Nhập địa chỉ giao hàng">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Ghi chú giao hàng:</label>
+                        <textarea id="note" rows="4" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Phương thức thanh toán:</label>
+                        <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px;">
+                            <label><input type="radio" name="paymentMethod" value="cod" checked> Tiền mặt khi nhận hàng</label>
+                            <label><input type="radio" name="paymentMethod" value="bank"> Chuyển khoản ngân hàng</label>
+                            <label><input type="radio" name="paymentMethod" value="e-wallet"> Ví điện tử</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-button">Xác nhận đặt hàng</button>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h2>Đơn hàng của bạn</h2>
+                <div id="productList" class="product-list">
+                    <!-- Products will be added here dynamically -->
+                </div>
+                <div id="totalPrice" class="total-price">
+                    <!-- Total price will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer"><script>addFooter();</script></div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+    <script src="js/thanhtoan.js"></script>
+</body>
+
+</html> 
